@@ -57,7 +57,7 @@ func (p *Twitter) FetchAuthUser(token *oauth2.Token) (*AuthUser, error) {
 
 			// NB! At the time of writing, Twitter OAuth2 doesn't support returning the user email address
 			// (see https://twittercommunity.com/t/which-api-to-get-user-after-oauth2-authorization/162417/33)
-			// Email string `json:"email"`
+			Email string `json:"email"`
 		} `json:"data"`
 	}{}
 	if err := json.Unmarshal(data, &extracted); err != nil {
